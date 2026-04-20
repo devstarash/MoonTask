@@ -35,7 +35,7 @@ MoonResponse MoonCalculator::showMoonPhases(const Date &date)
     bool result = loadFromFile(date);
     if (result == 0)
     {
-        return {Date(), Date(), Date()};
+        throw MoonCalculateException("Unable to calculate values");
     }
     else
     {

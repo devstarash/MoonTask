@@ -4,9 +4,15 @@
 #include "../include/Array.h"
 using namespace std;
 int main(){
-    Date d("2003-10-20");
+    string date;
+    cin >> date;
+    Date d(date);
     MoonCalculator moonCalc;
-    MoonResponse  mn = moonCalc.showMoonPhases(d);
-    cout<<"Response: " <<mn.rise.getFullDate() <<" " <<mn.set.getFullDate()<<" "<<mn.culmination.getFullDate()<<endl;
-
+    try{
+        MoonResponse  mn = moonCalc.showMoonPhases(d);
+        cout<<"Response: \n" <<"Лунный восход: "<< mn.rise.getFullDate() <<"\nЛунный заход: " <<mn.set.getFullDate()<<"\nЛунная кульминация: "<<mn.culmination.getFullDate()<<endl;
+    }catch(MoonCalculateException* exp){
+        cout << exp;
+    }
+    
 }

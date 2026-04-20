@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "MoonCalculateException.h"
 struct MoonResponse
 {
     Date rise;
